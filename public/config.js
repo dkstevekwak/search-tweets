@@ -1,5 +1,5 @@
-const consumerKey = "7gyJglLOugx3A1SHs0m8fyjEZ";
-const consumerSecret = "Axb2WySUsJ2NQ5ys5A21vbioMFUohAUY6NiqOzgsywXnInq9fi";
+const consumerKey = "your_consumer_key";
+const consumerSecret = "your_consumer_secret";
 module.exports = {
     consumerKey,
     consumerSecret
