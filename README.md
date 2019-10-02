@@ -2,12 +2,6 @@
 
 This sample app will show the 50 most recent tweets that contain at least one image or video of a pet (cat or dog) excluding tweets having the hashtag #caturday. 
 
-After setting up the sample, you will have a Node.js app that:
-
-1. Runs on `https://localhost:8000`
-1. Lets a user input a cloud document ID
-1. Returns the metadata of the cloud document
-
 <!-- $ doctoc ./readme.md --title "## Contents" --entryprefix 1. --gitlab --maxlevel 3 -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
