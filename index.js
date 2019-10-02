@@ -9,19 +9,21 @@ async function main() {
 	let finalResults = [];
 	const accessToken = await getAccessToken();
 	while (finalResults.length < 50) {
-		const response = await searchTweets(accessToken, "dog%20cat");
+		const response = await searchTweets(accessToken, "dog%20OR%20cat");
 		const tweets = response.statuses;
-		const results = filter(tweets);
+		const results = filter(tweets, finalResults);
 		finalResults = finalResults.concat(results);
 	}
 	const top50 = finalResults.slice(0, 50)
 	console.log(top50)
 }
 
-function filter(tweets) {
+function filter(tweets, finalResults) {
 	let results = [];
+	let existingIds = [];
+	if (finalResults.length) existingIds = finalResults.map(tweet => tweet.id);
 	tweets.forEach(tweet => {
-		if ("hashtags" in tweet.entities && "media" in tweet.entities) {
+		if ("hashtags" in tweet.entities && "media" in tweet.entities && !existingIds.includes(tweet.id)) {
 			if (hashtagNotCaturday(tweet.entities.hashtags) && hasImageOrVideo(tweet.entities.media)) {
 				results.push(tweet);
 			}
